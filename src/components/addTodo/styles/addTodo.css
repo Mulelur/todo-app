@@ -1,0 +1,40 @@
+.addTodo {
+  width: 40rem;
+  height: 4rem;
+  border-radius: 5rem;
+  margin: 2.4rem;
+  margin-top: 1.5rem;
+  background-color: #fefefe;
+  color: #fafafa;
+}
+
+.addTodo__form {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.addTodo__input {
+  margin-right: auto;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 4rem;
+}
+
+.addTodo__input:focus {
+  padding-left: 1rem;
+  transition: all 0.2s ease;
+}
+
+.addTodo__btn {
+  width: 6rem;
+  height: 4rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  border: none;
+  background-color: #ba84f2;
+  outline: none;
+  color: #fafafa;
+}

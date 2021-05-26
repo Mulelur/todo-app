@@ -1,0 +1,60 @@
+.todo {
+  width: 95%;
+  min-height: 5rem;
+  background-color: #dad9e7;
+  border-radius: 1.3rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.todo:hover {
+  transition: all 0.2 ease-in;
+  box-shadow: 0 0 1px 0 rgba(6, 24, 44, 0.18), 0 1px 2px 0 rgba(6, 24, 44, 0.2);
+}
+.todo:hover .todo__actions {
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.todo__title {
+  width: 17rem;
+  max-width: 15rem;
+  margin-right: auto;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.todo__actions {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+}
+
+.todo__action-delet {
+  margin: 0 0.5rem;
+  border: none;
+  width: 4rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  outline: none;
+
+  box-shadow: 0 1px 1px 0 rgba(6, 24, 44, 0.2),
+    inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.3);
+}
+
+.todo__action-delet--ac {
+}
+
+.todo__action-edit {
+  border: none;
+  width: 4rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  outline: none;
+
+  box-shadow: 0 1px 1px 0 rgba(6, 24, 44, 0.2),
+    inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.3);
+}

@@ -1,0 +1,41 @@
+.notCompleted {
+  width: 40%;
+  height: 100%;
+  margin: 0 2rem;
+  background-color: #f4f4f4;
+  border-radius: 2rem;
+}
+
+.notCompleted__header {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1rem;
+  background-color: #c13f55;
+  color: #fafafa;
+  font-size: 1.3rem;
+}
+
+.notCompleted__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 70%;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #7bdcf8;
+}

@@ -1,0 +1,27 @@
+.completed {
+  width: 40%;
+  height: 100%;
+  margin: 0 2rem;
+  background-color: #f4f4f4;
+  border-radius: 2rem;
+}
+
+.completed__header {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1rem;
+  background-color: #659e2f;
+  color: #fafafa;
+  font-size: 1.3rem;
+}
+
+.completed__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}

@@ -1,25 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {
+  AddToDo,
+  Completed,
+  Container,
+  EditToDo,
+  NotCompleted,
+  ToDo,
+} from "./components";
+import "./App.css";
+import { ToDoContext } from "./context/todoContext";
 
-function App() {
+export default function App() {
+  const [todo, setTodo] = useState([]);
+  const [showEdit, setShowEdit] = useState(false);
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
+
+  function handleDrop(e) {
+    let id = e.dataTransfer.getData("id");
+
+    todo.filter((item) => {
+      if (item.id === id) {
+        item.completed = !item.completed;
+      }
+      return item;
+    });
+
+    setTodo([...todo]);
+  }
+  const Task = { completed: [], notCompleted: [] };
+  if (todo) {
+    todo.forEach((item, index) => {
+      if (item.completed) {
+        Task.completed.push(
+          <ToDo title={item.title} id={item.id} index={index} />
+        );
+      } else {
+        Task.notCompleted.push(<ToDo title={item.title} id={item.id} />);
+      }
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ToDoContext.Provider value={{ todo, setTodo, showEdit, setShowEdit }}>
+      <div className="app">
+        <h1>TODO App</h1>
+        <AddToDo />
+        {showEdit && <EditToDo />}
+        <Container>
+          <NotCompleted
+            onDragOver={(e) => handleDragOver(e)}
+            onDrop={(e) => {
+              handleDrop(e);
+            }}
+          >
+            {Task.notCompleted.map((item) => {
+              return item;
+            })}
+          </NotCompleted>
+          <Completed
+            onDragOver={(e) => handleDragOver(e)}
+            onDrop={(e) => {
+              handleDrop(e);
+            }}
+          >
+            {Task.completed.map((item) => {
+              return item;
+            })}
+          </Completed>
+        </Container>
+      </div>
+    </ToDoContext.Provider>
   );
 }
-
-export default App;
