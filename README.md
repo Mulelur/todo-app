@@ -1,7 +1,7 @@
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This is a react app drag and drop TODO app
 ## Available Scripts
 
 In the project directory, you can run:
